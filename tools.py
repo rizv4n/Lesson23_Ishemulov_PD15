@@ -16,7 +16,11 @@ def foo_filter(data, value):
 
 def foo_map(data, value=None):
     res = map(lambda v: v.split('-')[0].replace(' ', ''), data)
-    return res
+    if value == '0' or value is None:
+        return res
+    else:
+        res = map(lambda v: v.split('.')[int(value)], res)
+        return res
 
 
 def foo_unique(data, value=None):
