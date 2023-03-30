@@ -7,6 +7,7 @@ app = Flask(__name__)
 @app.route("/perform_query", methods=["POST"])
 def perform_query():
     args = request.json
+    print(args)
     res = main_func(args)
     return res
 

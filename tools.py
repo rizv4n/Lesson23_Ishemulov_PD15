@@ -1,3 +1,6 @@
+import re
+
+
 def get_args(args):
     cmd_items = {i: args.get(i) for i in args if 'cmd' in i}
     value_items = {i: args.get(i) for i in args if 'value' in i}
@@ -39,3 +42,8 @@ def foo_sort(data, value='ask'):
 
 def foo_limit(data, value):
     return data[:int(value)]
+
+
+def foo_regex(data, value):
+    res = filter(lambda v: re.match(f'.*{value}', v), data)
+    return res

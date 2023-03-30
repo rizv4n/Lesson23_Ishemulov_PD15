@@ -1,5 +1,5 @@
 import os
-from tools import get_args, read_file, foo_filter, foo_map, foo_unique, foo_sort, foo_limit
+from tools import get_args, read_file, foo_filter, foo_map, foo_unique, foo_sort, foo_limit, foo_regex
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
@@ -9,7 +9,8 @@ functions = {
     'map': foo_map,
     'unique': foo_unique,
     'sort': foo_sort,
-    'limit': foo_limit
+    'limit': foo_limit,
+    'regex': foo_regex
 }
 
 
